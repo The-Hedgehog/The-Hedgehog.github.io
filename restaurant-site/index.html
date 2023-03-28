@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>レストランサイトの制作</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Train+One&family=Zen+Kurenaido&display=swap');
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/hamburgers.css">
+<link rel="stylesheet" href="css/jquery.bxslider.css">
+<link rel="stylesheet" href="css/lightbox.css">
+<link rel="shortcut icon" href="favicon.png" ><!-- fabicon typeの記述は消し、ico→pngに変更 -->
+<link rel="apple-touch-icon" href="touch-icon.png">
+</head>
+<body id="top">
+<header>
+<h1><img src="img/logo-sign2-2.svg" alt=""></h1>
+</header>
+<p class="hamburger hamburger--emphatic" id="ham-btn">
+<span class="hamburger-box">
+<span class="hamburger-inner"></span>
+</span>
+</p>
+<nav id="g-nav">
+<div class="nav-img">
+<img src="img/nav.jpg" alt="">    
+</div>
+<ul>
+<li><a href="#top" data-en="TOP">TOP</a></li>
+<li><a href="#news" data-en="NEWS">NEWS</a></li>
+<li><a href="#video" data-en="VIDEO">VIDEO</a></li>
+<li><a href="#menu" data-en="MENU">MENU</a></li>
+<li><a href="#shop" data-en="SHOP">SHOP</a></li>
+<li><a href="#reserve" data-en="RESERVE">RESERVE</a></li>
+</ul>
+<p class="nav-logo"><img src="img/logo-sign2-2.svg" alt=""></p>
+</nav>
+
+<div class="main-visual">
+<ul class="bxslider">
+<li><img src="img/slide-01.jpg" alt=""></li>
+<li><img src="img/slide-02.jpg" alt=""></li>
+<li><img src="img/slide-03.jpg" alt=""></li>
+</ul>
+</div>
+
+<main>
+<div id="news">
+<h2 data-en="NEWS">お知らせ</h2>
+<dl id="news-list"><!-- dlを残し、dtとddを外部ファイル化する→news.txt -->
+
+</dl>
+</div><!-- /#news -->
+
+<div id="video">
+<h2 data-en="VIDEO">動画</h2>
+<div class="video-wrapper">
+<iframe class="ytube" src="https://www.youtube.com/embed/R3NmZHQQiS4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div><!-- video-wrapper -->
+</div><!-- /#video -->
+
+<div id="menu">
+<h2 data-en="MENU">メニュー</h2>
+<div class="scroll-wrapper">
+
+<div class="scroll-box">    
+<a href="img/menu-01.jpg" data-lightbox="photo" data-title="Salmon Steak">   
+    <!-- a要素のhrefに表示させたい画像の名前を入れる -->
+    <!-- a要素の中にdata-lightbox=""を入れる -->
+<p class="photo"><img src="img/menu-01.jpg" alt=""></p>
+<p class="txt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi sit laboriosam temporibus nemo est!</p>
+</a> 
+</div><!-- scroll-box -->
+
+<div class="scroll-box">    
+    <a href="img/menu-02.jpg" data-lightbox="photo" data-title="Herb Sauteed Potato">   
+        <!-- a要素のhrefに表示させたい画像の名前を入れる -->
+        <!-- a要素の中にdata-lightbox=""を入れる -->
+<p class="photo"><img src="img/menu-02.jpg" alt=""></p>
+<p class="txt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi sit laboriosam temporibus nemo est!</p>
+</a> 
+</div><!-- scroll-box -->
+
+<div class="scroll-box">    
+<a href="img/menu-03.jpg" data-lightbox="photo" data-title="Skewered Vegetables">   
+            <!-- a要素のhrefに表示させたい画像の名前を入れる -->
+            <!-- a要素の中にdata-lightbox=""を入れる -->
+<p class="photo"><img src="img/menu-03.jpg" alt=""></p>
+<p class="txt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi sit laboriosam temporibus nemo est!</p>
+</a> 
+</div><!-- scroll-box -->
+
+<div class="scroll-box">    
+<a href="img/menu-04.jpg" data-lightbox="photo" data-title="Tacos with Meat">   
+        <!-- a要素のhrefに表示させたい画像の名前を入れる -->
+        <!-- a要素の中にdata-lightbox=""を入れる -->
+<p class="photo"><img src="img/menu-04.jpg" alt=""></p>
+<p class="txt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi sit laboriosam temporibus nemo est!</p>
+</a> 
+</div><!-- scroll-box -->
+
+<div class="scroll-box">    
+<a href="img/menu-05.jpg" data-lightbox="photo" data-title="Basil Sauce Pasta">   
+            <!-- a要素のhrefに表示させたい画像の名前を入れる -->
+            <!-- a要素の中にdata-lightbox=""を入れる -->
+<p class="photo"><img src="img/menu-05.jpg" alt=""></p>
+<p class="txt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi sit laboriosam temporibus nemo est!</p>
+</a> 
+</div><!-- scroll-box -->
+
+<div class="scroll-box">    
+<a href="img/menu-06.jpg" data-lightbox="photo" data-title="Italian Wine">   
+                <!-- a要素のhrefに表示させたい画像の名前を入れる -->
+                <!-- a要素の中にdata-lightbox=""を入れる -->
+<p class="photo"><img src="img/menu-06.jpg" alt=""></p>
+<p class="txt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi sit laboriosam temporibus nemo est!</p>
+</a> 
+</div><!-- scroll-box -->
+
+</div><!-- scroll-wrapper -->
+</div><!-- /#menu -->
+
+<div id="shop">
+<h2 data-en="SHOP">店舗情報</h2>
+<div class="shop-wrapper"><!-- Twitter ウィジェット制作画面で貼りたいtwitterのURLを入力
+カスタマイズで500x350を入力、アップデートを押して更新してcode copyして貼り付ける -->
+<div class="sns">
+    <a class="twitter-timeline" data-width="350" data-height="500" href="https://twitter.com/city_shibuya?ref_src=twsrc%5Etfw">Tweets by city_shibuya</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</div><!-- sns -->
+<div class="map">
+<iframe class="g-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3241.7699872167036!2d139.69944711432785!3d35.65803823885283!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188b563b00109f%3A0x337328def1e2ab26!2z5riL6LC36aeF!5e0!3m2!1sja!2sjp!4v1675414956613!5m2!1sja!2sjp" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div><!-- map -->
+</div><!-- shop-wrapper -->
+
+</div><!-- /#shop -->
+
+<div id="reserve">
+<h2 data-en="RESERVE">ご予約</h2>
+<div class="form">
+    <iframe class="g-form" src="https://docs.google.com/forms/d/e/1FAIpQLSfwciAMLtYvf5KxzxAVkojW4MZ9TjWTY7oyriy2DqBObXGoQw/viewform?embedded=true"  height="1250" frameborder="0" marginheight="0" marginwidth="0">読み込んでいます…</iframe>
+</div>
+
+</div><!-- /#reserve -->
+</main>
+<footer>
+<p><small>&copy; <span id="this-year"></span> LIMONE Ristrante Felica</small></p>
+</footer>
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js'></script>
+<script src="js/jquery.bxslider.js"></script>
+<script src="js/lightbox.js"></script>
+<script src="js/script.js"></script>
+<script>
+$(function(){
+});
+</script>
+</body>
+</html>

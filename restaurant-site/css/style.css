@@ -1,0 +1,411 @@
+@charset "utf-8";
+
+:root{
+--main_color:#1e3926;
+}
+
+html{box-sizing:border-box;-webkit-text-size-adjust:100%}*,:after,:before{background-repeat:no-repeat;box-sizing:inherit}:after,:before{text-decoration:inherit;vertical-align:inherit}*{padding:0;margin:0;box-sizing:border-box;}audio:not([controls]){display:none;height:0}hr{overflow:visible}article,aside,details,figcaption,figure,footer,header,main,menu,nav,section,summary{display:block}summary{display:list-item}small{font-size:80%}[hidden],template{display:none}abbr[title]{border-bottom:1px dotted;text-decoration:none}a{background-color:transparent;-webkit-text-decoration-skip:objects}a:active,a:hover{outline-width:0}code,kbd,pre,samp{font-family:monospace,monospace}b,strong{font-weight:bolder}dfn{font-style:italic}mark{background-color:#ff0;color:#000}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}input{border-radius:0}[role=button],[type=button],[type=reset],[type=submit],button{cursor:pointer}[disabled]{cursor:default}[type=number]{width:auto}[type=search][type=search]::-webkit-search-cancel-button,[type=search]::-webkit-search-decoration{-webkit-appearance:none}textarea{overflow:auto;resize:vertical}button,input,optgroup,select,textarea{font:inherit}optgroup{font-weight:700}button{overflow:visible}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:0;padding:0}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button:-moz-focusring{outline:1px dotted}[type=reset],[type=submit],button,html [type=button]button,select{text-transform:none}button,input,select,textarea{background-color:transparent;border-style:none;color:inherit}select::-ms-expand{display:none}select::-ms-value{color:currentColor}legend{border:0;color:inherit;display:table;max-width:100%;white-space:normal}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}[type=search]img{border-style:none;vertical-align: bottom}progress{vertical-align:baseline}svg:not(:root){overflow:hidden}audio,canvas,progress,video{display:inline-block}@media screen{[hidden~=screen]{display:inherit}[hidden~=screen]:not(:active):not(:focus):not(:target){position:absolute!important;clip:rect(0 0 0 0)!important}}[aria-busy=true]{cursor:progress}[aria-controls]{cursor:pointer}[aria-disabled]{cursor:default}::-moz-selection{background-color:#b3d4fc;color:#000;text-shadow:none}::selection{background-color:#b3d4fc;color:#000;text-shadow:none}ul,ol{list-style:none;}a{text-decoration:none;}img{max-width: 100%;}
+
+
+/* pcレイアウト */
+header{
+margin: 20px 0 0 20px;    
+width: 250px;
+position: absolute;
+z-index: 8;
+background-color: #CCCCCCAA;
+}
+
+
+#g-nav{
+width: 100%;
+height: 100vh;
+background-color: #fff8;
+position: fixed;
+z-index: 9;/* ハンバーガー部分のz-indexより1小さい値にする */
+top: 0;
+left: 0;
+display: flex;
+}
+
+.nav-logo{
+width: 250px;
+position: absolute;
+top: 40vh;
+right: 2px;
+margin: 0 auto;
+}
+
+.nav-img{
+width: 35%;
+height: 100vh;       
+}
+
+.nav-img>img{
+object-fit: cover;
+width: 100%;
+height: 100%;
+}
+
+#g-nav>ul{  
+display: flex; 
+flex-wrap: wrap;/* 2列にするためにこれが必要 */
+}
+
+#g-nav li{   
+width: 46%;    
+}
+
+#g-nav a{ 
+ 
+color: var(--main_color); 
+font-weight: bold;   
+font-family: 'Train One', cursive;
+margin-left:30px;
+font-size: 20px;
+line-height: 4;
+padding: 10px 120px 10px 10px;
+border-radius: 10px;
+}
+
+#g-nav a:hover{
+background-color: #eee8;    
+color: #626231;
+}
+
+/* メインビジュアル部分 */
+.main-visual{
+width: 100%;
+height: 100vh;
+}
+.main-visual li{
+width: 100%;
+height: 100vh;
+}
+.main-visual img{
+object-fit: cover;
+width: 100%;
+height: 100%;
+}
+
+/* ハンバーガー部分 */
+
+#ham-btn{
+position: fixed;
+right: 0;
+top: 0;
+z-index: 10;
+background-color: #FFF;
+}
+
+/* ナビゲーションボタンをクリックしたらナビを消す */
+
+
+/* 各コンテンツの見出し */
+h2{
+text-align: center;
+font-size: 20px;
+margin: 50px 0 80px;
+font-family: 'Zen Kurenaido', sans-serif;
+color: #1e3926;
+}
+h2::before{
+content:attr(data-en);
+display: block;
+color: var(--main_color);
+font-family: 'Train One', cursive;
+margin-bottom: -2px;
+font-size: 38px;
+}
+
+/* お知らせ部分 */
+/* dt25%、dd75% */
+#news-list{
+max-width: 700px;
+margin: 0 auto;
+display: flex;
+flex-wrap: wrap;
+font-family: 'Zen Kurenaido', sans-serif;
+font-weight: bold;
+}
+
+#news-list>dt{
+width: 25%;    
+color: #fff;
+background-color: var(--main_color);/* cssの変数で色を指定する */
+padding: 12px;
+margin-bottom: 4px;
+}
+
+#news-list>dd{
+width: 75%;    
+padding: 12px;/* dtと同じ数値を入れる */
+margin-bottom: 4px;
+border-bottom: 2px solid var(--main_color);
+}
+
+#news-list>:is(dt:nth-of-type(n+4),dd:nth-of-type(n+4)){/* is()でdtとddのnth of typeをまとめる */
+display: none;    
+}
+
+.video-wrapper{/* 動画部分親要素にmax-widthを指定する。高さの指定のかわりに縦横比の指定をする。 */
+max-width: 800px;    
+aspect-ratio: 16 / 9;/* アスペクト比の指定をする。だいたい16/9が多い。 */
+margin: 0 auto 80px;
+}
+
+.ytube{/* iframeの幅・高さは必ず100%を入力する。 */
+width: 100%;  
+height:100%;
+}
+
+/* メニュー部分 */
+.scroll-wrapper{
+max-width: 1200px;
+margin: 0 auto 80px;
+display: flex;
+flex-wrap: wrap;
+gap: 60px 20px;
+}
+
+.scroll-box{
+width: calc((100% - 40px) / 3);    
+background-color: #eee;
+padding: 20px;
+font-family: 'Zen Kurenaido', sans-serif;
+font-weight: bold;
+border-radius: 6px;
+}
+
+.scroll-box>a{
+color: var(--main_color);
+padding: 16px;
+display: block;
+}
+
+.scroll-box>a:hover{
+box-shadow: 0 0 8px #a9a9a9;/* 横方向、縦方向、影の距離、影の色 */
+transition: 0.6s;
+border-radius: 6px;
+}
+
+.photo{
+margin-bottom: 10px;    
+}
+
+/* 店舗情報部分 */
+.shop-wrapper{
+max-width:1200px ;/* 上と同じ値を指定する */
+margin: 0 auto 80px;
+display: flex;
+justify-content: space-between;
+}
+
+.map{
+width: calc(100% - 400px);/* twitterの幅を350pxで設定したので、それ＋余白分 */    
+height: 500px;
+}
+
+.g-map{
+width: 100%;
+height: 100%;    
+filter: grayscale(80%);/* mapをグレースケールにできる */
+}/* iframeの指定は必ず幅も高さも100% */
+
+/* 予約フォーム部分 */
+
+.form{
+max-width: 640px;
+margin: 0 auto 100px;
+}
+
+.g-form{
+width: 100%;/* 必ず100% */
+}
+
+footer{
+width: 100%;
+height: 100px;
+background-color: var(--main_color);
+}
+
+footer>p{
+text-align: center;
+color: #fff;    
+font-size: 18px;
+line-height: 100px;
+}
+
+@media(max-width:1250px){
+header{
+display: none;
+}
+}
+
+
+
+@media (max-width:960px) {
+/* ヘッダー部分 */
+header{
+display: none;
+}
+
+.nav-logo{
+width: 280px;
+position: absolute;
+top: 450px;
+right: 2px;
+margin: 0 auto;
+}
+
+#g-nav{
+    display: block;
+    font-size: 30px;
+    }
+    
+    #g-nav>ul{
+    position: absolute;    
+    right: 0;
+    top: 0;
+    }
+    
+    #g-nav li{   
+    width: 96%; 
+
+    }
+        
+    #g-nav a{ 
+    margin-left:350px;
+    line-height: 5;
+    padding: 10px 40px 10px 10px;
+    border-radius: 10px;
+    }
+
+h2{
+        font-size: 16px;
+        margin: 40px 0 30px;    
+        }
+        
+h2::before{
+        font-size: 24px;
+        }        
+    
+
+/* メニュー部分 */
+.scroll-box{
+width: calc((100% - 30px) / 2);
+}
+
+/* ビデオ部分 */
+.video-wrapper{
+padding: 0 10px;    
+}
+
+.shop-wrapper{
+display: block;    
+}
+
+.sns{
+width: 350px;    
+margin: 0 auto 50px;    
+}
+
+.map{
+width: 94%;
+height: 360px;
+margin: 0 auto;  
+}
+
+.g-map{
+width: 94%;
+height: 360px;
+margin: 0 auto;  
+}
+    
+
+@media(max-width:640px){
+/* ヘッダー部分 */    
+header{
+display: none;
+}
+
+/* ナビゲーション部分 */
+.nav-logo{
+width: 260px;
+position: absolute;
+top: 450px;
+right: 0;
+margin: 0 auto;
+}
+
+#g-nav a{ 
+    margin-left:260px;
+    line-height: 5;
+    border-radius: 10px;
+    }
+    
+
+
+/* 各コンテンツの見出し */
+h2{
+font-size: 14px;
+margin: 40px 0 30px;    
+}
+
+h2::before{
+font-size: 22px;
+}    
+
+/* お知らせ部分 */
+#news-list{
+display: block;
+}
+
+#news-list>dt{
+width: 32%;    
+color: #fff;
+background-color: var(--main_color);/* cssの変数で色を指定する */
+padding: 10px;
+margin-bottom: 4px;
+border-radius: 0 6px 6px 0;
+}
+
+#news-list>dd{
+width: 80%;    
+padding: 0 0 12px 12px ;/* dtと同じ数値を入れる */
+margin:10px 0 14px;
+border-bottom: none;    
+}
+
+/* メニュー部分 */    
+.scroll-wrapper{
+scroll-snap-type: x mandatory;
+overflow: auto;
+flex-wrap: nowrap;
+}
+
+.scroll-box{
+flex: 0 0 84%;
+scroll-snap-align: start;
+}
+}
+
+#g-nav{
+display: block;    
+background-color: #fff9;
+position: fixed;
+z-index: 9;/* ハンバーガー部分のz-indexより1小さい値にする */
+top: 0;
+left: 0;
+}
+
+#g-nav a{ 
+font-size: 14px;
+}    
+
+/* 店舗情報部分 */
+
+
+
+
+}
