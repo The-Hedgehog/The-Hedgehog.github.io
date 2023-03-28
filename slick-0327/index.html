@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SlickとGoogleカレンダーの実装</title>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+<style>
+html{box-sizing:border-box;-webkit-text-size-adjust:100%}*,:after,:before{background-repeat:no-repeat;box-sizing:inherit}:after,:before{text-decoration:inherit;vertical-align:inherit}*{padding:0;margin:0;box-sizing:border-box;}audio:not([controls]){display:none;height:0}hr{overflow:visible}article,aside,details,figcaption,figure,footer,header,main,menu,nav,section,summary{display:block}summary{display:list-item}small{font-size:80%}[hidden],template{display:none}abbr[title]{border-bottom:1px dotted;text-decoration:none}a{background-color:transparent;-webkit-text-decoration-skip:objects}a:active,a:hover{outline-width:0}code,kbd,pre,samp{font-family:monospace,monospace}b,strong{font-weight:bolder}dfn{font-style:italic}mark{background-color:#ff0;color:#000}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}input{border-radius:0}[role=button],[type=button],[type=reset],[type=submit],button{cursor:pointer}[disabled]{cursor:default}[type=number]{width:auto}[type=search][type=search]::-webkit-search-cancel-button,[type=search]::-webkit-search-decoration{-webkit-appearance:none}textarea{overflow:auto;resize:vertical}button,input,optgroup,select,textarea{font:inherit}optgroup{font-weight:700}button{overflow:visible}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:0;padding:0}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button:-moz-focusring{outline:1px dotted}[type=reset],[type=submit],button,html [type=button]button,select{text-transform:none}button,input,select,textarea{background-color:transparent;border-style:none;color:inherit}select::-ms-expand{display:none}select::-ms-value{color:currentColor}legend{border:0;color:inherit;display:table;max-width:100%;white-space:normal}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}[type=search]img{border-style:none;vertical-align: bottom}progress{vertical-align:baseline}svg:not(:root){overflow:hidden}audio,canvas,progress,video{display:inline-block}@media screen{[hidden~=screen]{display:inherit}[hidden~=screen]:not(:active):not(:focus):not(:target){position:absolute!important;clip:rect(0 0 0 0)!important}}[aria-busy=true]{cursor:progress}[aria-controls]{cursor:pointer}[aria-disabled]{cursor:default}::-moz-selection{background-color:#b3d4fc;color:#000;text-shadow:none}::selection{background-color:#b3d4fc;color:#000;text-shadow:none}ul,ol{list-style:none;}a{text-decoration:none;}img{max-width: 100%;}
+
+h1{
+text-align: center;
+margin-bottom:30px 0 40px;    
+}
+
+.slider-for{
+max-width: 960px;  
+margin: 0 auto 30px;  
+}
+
+.slider-nav{
+max-width: 960px;  
+margin: 0 auto 30px;  
+}
+
+.slide-arrow{
+width: 40px;
+position: absolute;
+top: 0;
+bottom: 0;
+margin: auto;
+}
+
+
+.slider-nav>li{
+margin: 0 10px;
+cursor: pointer;
+}
+
+.slide-arrow.prev-arrow{
+left: -50px;    
+z-index: 10;
+}
+
+.slide-arrow.next-arrow{
+right: -50px;    
+z-index: 10;  
+}
+
+h2{
+text-align: center;
+    
+}
+
+.calendar{
+min-width: 800px;
+margin: 0 auto 100px;
+}
+
+.g-calendar{
+width: 100%;
+}
+
+</style>
+</head>
+<body>
+<h1>SlickとGoogleカレンダーの実装</h1>    
+
+<div class="slider-for">
+<p><img src="img/01-1.jpg" alt=""></p>
+<p><img src="img/03-3.jpg" alt=""></p>
+<p><img src="img/04-4.jpg" alt=""></p>
+<p><img src="img/05-5.jpg" alt=""></p>
+</div>
+
+<ul class="slider-nav">
+<li><img src="img/01-1.jpg" alt=""></li>  
+<li><img src="img/03-3.jpg" alt=""></li>
+<li><img src="img/04-4.jpg" alt=""></li>
+<li><img src="img/05-5.jpg" alt=""></li>    
+</ul>
+
+<h2>Googleカレンダー</h2>
+<div class="calendar">
+    <iframe class="g-calendar" src="https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%23B39DDB&ctz=Asia%2FTokyo&showTz=0&showTitle=0&showPrint=0&showNav=0&showTabs=0&showCalendars=0&src=aGlrYXJpLmZ1amloYXJhLmhmaEBnbWFpbC5jb20&src=NGU0MTBhMzBiNDM4OGY0MGJlYzkyNmYwNTljMGE2NTJiYzU5ZDRlYzM2ZWEzYTJmYWM3ZWIzMjgxNGVlNjgxMUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=YWRkcmVzc2Jvb2sjY29udGFjdHNAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&src=amEuamFwYW5lc2UjaG9saWRheUBncm91cC52LmNhbGVuZGFyLmdvb2dsZS5jb20&color=%23039BE5&color=%23E67C73&color=%2333B679&color=%230B8043" style="border:solid 1px #777" frameborder="0" scrolling="no"></iframe>
+</div>
+
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.js'></script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script>
+$(function(){
+
+$('.slider-for').slick({
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  arrows: false,
+  fade: true,
+  asNavFor: '.slider-nav'
+});
+
+$('.slider-nav').slick({
+  slidesToShow: 3,/* スライドさせる数より1少ない数を入力する */
+  slidesToScroll: 1,
+  asNavFor: '.slider-for',
+  dots: false,
+  centerMode: true,
+  focusOnSelect: true,
+  prevArrow: '<img src="img/left-1.svg" class="slide-arrow prev-arrow">',
+  nextArrow: '<img src="img/right-1.svg" class="slide-arrow next-arrow">'
+});
+
+
+});
+
+</script>
+</body>
+</html>

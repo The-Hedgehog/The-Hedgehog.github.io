@@ -1,0 +1,218 @@
+
+・UIを考える
+
+ABテスト　二パターン作って比較するなど
+
+・mamariの事例
+改善したいこととして
+→アクティブユーザー（ユーザ間の交流）を増やしたい
+→文字列ではなく、名前らしいニックネームの登録を促すような
+　仕組みを導入してほしいとのリクエストがデザイナーにあった。
+→プレイスホルダーを使って名前を仮に入れる？
+→「　　　」さん　名前欄のうしろに「さん」をつけたことによって改善。
+
+・CUI
+キャラクターユーザーインターフェース
+
+・CLI
+コマンドラインインターフェース
+
+・VUI
+Voice user interface (音声ユーザーインターフェイス)
+→セキュリティをどう確保するかが問題
+
+・はじめてのUIデザイン（改訂版）
+
+ーーーー
+
+・ブレイクポイントの登録を変更
+
+$point-1:960px;
+
+・Mixinの登録を追加
+
+@mixin p1{
+@media (max-width:$point-1){
+@content;
+}
+}
+
+・ギャラリー部分　li｛｝の中
+
+@include p1{
+width: calc((100% - 20px) / 2);
+height: 160px;
+
+&:nth-of-type(3n+1){
+margin-top: 0;
+}
+&:nth-of-type(3n){
+margin-top: 0;
+}
+
+
+・ギャラリー部分　#item-photo{}の中
+
+@include p1{
+width: 96%;
+gap: 40px 20px;    
+}
+　
+・背景画像をattachment　の部分　.bg-1{}の中
+
+@include p1{
+background: url(../img/bg01-2.jpg) no-repeat center center/cover scroll;
+}
+
+・料金部分　.step-wrapper{｝の中
+
+.step-box{
+width: 220px;
+padding:40px 20px 0;
+margin: 30px auto;
+}
+（丸の部分のサイズ変更）
+
+
+・.shop-wrapper部分　.shop-wrapper{}の中
+
+@include p1{
+margin: 0 0 100px 10%;
+
+.shop-box{
+flex: 0 0 80%;
+}
+
+・カルーセル部分　.carousel{}の中
+
+@include p1{
+width: 100%;
+}
+
+・header部分　.header{}の中
+画像の上にタグラインが載るように調整する
+
+
+
+@include tab{
+height: 80px;
+
+h1{
+font-size: 36px;    
+}
+
+.tag-line{    
+position: absolute;/* 保留 */
+left: 0;
+right: 0;
+top: 260px;
+z-index: 100;
+background-color: #fff9;
+margin: 0 auto;
+padding: 20px;
+width: fit-content;/* これはとても便利 */
+font-size: 20px;
+color: #c53490;
+border-radius: 16px;
+font-weight: bold;
+}
+}
+
+・News部分　#news-list{}の中
+
+
+@include sp{
+display: block;    
+dt{
+width: 100%;    
+margin-bottom: 6px;
+}
+dd{
+width: 100%;    
+margin-bottom: 26px;
+}
+
+ーーーー
+【お申込み｜入力画面】
+
+・.form-step{}の中
+
+
+@include p1{
+padding: 0 20px;    
+}
+
+@include tab{
+display: block;   
+
+li{
+width: 86%; 
+aspect-ratio: 4 / 1;   
+border-radius: 8px;
+margin: 0 auto 20px;
+padding-top: 4%;
+} 
+}
+
+・.form{}の中
+
+・（一番上）
+padding: 0 10px;
+
+
+・（一番下）
+
+@include tab{
+
+dl{
+display: block;    
+}
+dt{
+width: 100%;    
+padding: 10px 20px;
+}
+dd{
+width: 100%;    
+}
+}
+
+【フォーム内の各項目部分】
+・[type="text"],[type="email"]{｝の中
+
+@include tab{
+width: 100%;    
+}
+
+・textarea{｝の中
+
+@include tab{
+width: 100%;
+}
+
+
+・[type="radio"]{｝の下、外側
+
+@include tab{
+form dd:nth-of-type(3)>label{
+display: block;
+margin-bottom: 10px;
+background-color: $color_3;
+padding: 14px;
+border-radius: 8px;
+}
+}
+
+
+ーーーーー
+【ネット上のコピーしてきたコードと自分のコードを比較する】
+
+・比較したいコードをコピーする
+
+・［Ctrl］+［Shift］+［P］でコマンドパレットを表示
+→「compare」と入力する
+→一番上のやつ
+
+
+
+
+
