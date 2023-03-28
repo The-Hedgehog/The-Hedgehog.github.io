@@ -1,0 +1,121 @@
+@charset "utf-8";
+
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;    
+}
+
+ul{
+list-style: none;    
+}
+
+a{
+text-decoration: none;    
+}
+
+img{
+vertical-align: none;
+max-width: 100%;    
+}
+
+h1{
+font-size: 30px;
+text-align: center;
+margin: 40px 0;    
+font-family: 'Unbounded', cursive;
+color: #004080;
+}
+
+body{
+background-color: #efefef;    
+}
+
+.column-wrapper{
+width: 90%;
+margin: 0 auto 30px;    
+columns:4;/* カラム構成になる指示！！ */
+gap: 8px;
+}
+
+.photo img{
+margin-bottom: 4px;
+border-radius: 8px;    
+}
+
+.txt{
+line-height: 1.6;
+color: #ffffff;
+}
+
+.box{
+break-inside:avoid;  /* 文字だけ改行されることを防ぐ。↑カラム構成の際は必ず使う */
+background-color: #004080;
+padding: 14px;
+margin-bottom: 8px;
+border-radius: 8px;    
+}
+
+#more-btn{
+text-align: center;
+display: block;
+margin-bottom: 50px;    
+padding-bottom: 30px;
+}
+
+/* pulp noteより引用。ボタンのスニペット */
+
+.button01 a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    padding: 1em 2em;
+    width: 300px;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 700;
+    background-color: #004080;
+    border-radius: 8px;
+    transition: 0.3s;
+  }
+  
+  .button01 a::after {
+    content: '';
+    width: 5px;
+    height: 5px;
+    border-top: 3px solid #fff;
+    border-right: 3px solid #fff;
+    transform: rotate(45deg);
+  }
+  
+  .button01 a:hover {
+    text-decoration: none;
+    background-color: #004080;
+  }
+
+
+/* CSS、ボタン、スニペット、などで検索すると出てくる 
+https://pulpxstyle.com/*/
+
+/* 960px以下のときは３カラム */
+@media (max-width:960px) {
+.column-wrapper{
+columns:3;
+}
+
+}
+
+/* 640px以下のときは2カラム */
+@media (max-width:640px) {
+.column-wrapper{
+columns:2;
+gap: 5px;
+}
+
+.box:nth-of-type(n+9){
+display: none;    
+}
+
+}
+
